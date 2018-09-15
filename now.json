@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "PASSPORT_CLIENT_ID": "production",
+      "PASSPORT_CLIENT_SECRET": "production",
+      "COOKIE_SESSION_KEY": "production",
+      "MONGODB_URI": "production"
+    }
+  }
+}
