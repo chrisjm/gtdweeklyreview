@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Todoist Weekly Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Todoist Weekly Review</h1>
+  <p>Hi, <%= user.full_name %>!</p>
+  <p><a href="/auth/logout">Logout</a></p>
+
+  <h2><%= completedItems.length %> Completed Items</h2>
+  <% for (let group in groupedCompletedItems) { %>
+    <h2><%= group %></h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Project</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% groupedCompletedItems[group].forEach(function(event) { %>
+        <% const project = user.projects.find((project) => project.id === event.parent_project_id) %>
+        <% const date = new Date(event.event_date) %>
+        <tr>
+          <td><%= event.extra_data.content %></td>
+          <td>
+            <strong style="color: <%= colors[project.color] %>">
+              <%= project.name %>
+            </strong>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+</body>
+</html>
