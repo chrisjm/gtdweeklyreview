@@ -8,6 +8,7 @@
 </head>
 <body>
   <h1><abbr title="Getting Things Done">GTD</abbr> Weekly Review</h1>
+
   <p>Hi, <%= user.full_name %>!</p>
   <p><a href="/auth/logout">Logout</a></p>
 
@@ -37,5 +38,7 @@
       </tbody>
     </table>
   <% } %>
+
+  <%- include('partials/github-fork') %>
 </body>
 </html>
