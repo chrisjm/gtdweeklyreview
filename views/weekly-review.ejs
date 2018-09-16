@@ -7,11 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <h1>Todoist Weekly Review</h1>
+  <h1><abbr title="Getting Things Done">GTD</abbr> Weekly Review</h1>
   <p>Hi, <%= user.full_name %>!</p>
   <p><a href="/auth/logout">Logout</a></p>
 
-  <h2><%= completedItems.length %> Completed Items</h2>
+  <h2><%= completedItems.length %> Completed Todoist Items</h2>
   <% for (let group in groupedCompletedItems) { %>
     <h2><%= group %></h2>
     <table>
