@@ -1,5 +1,8 @@
 require('dotenv').config()
 
+const Raven = require('raven')
+Raven.config(process.env.RAVEN_DSN).install();
+
 const express = require('express')
 const request = require('request')
 const _ = require('lodash')
@@ -33,6 +36,9 @@ const authCheck = (req, res, next) => {
 }
 
 const app = express()
+
+// NB: This request handler must be the first middleware on the app
+app.use(Raven.requestHandler());
 
 // View Engine
 app.set('view engine', 'ejs')
@@ -91,6 +97,10 @@ app.get('/weekly-review', authCheck, (req, res) => {
     }
   )
 })
+
+// Error Handler
+// NB: Fallthrough error handlers after this one
+app.use(Raven.errorHandler());
 
 app.listen(3000, () => {
   console.log('Now listening on http://localhost:3000')
