@@ -79,16 +79,16 @@ now
 
 ## Built With
 
+* [cookie-session](https://github.com/expressjs/cookie-session) - Cookie-based session middleware
 * [Express.js](https://expressjs.com/) - Backend framework
-* [Mongoose](https://mongoosejs.com/) - MongoDB ORM
 * [date-fns](https://date-fns.org/) - Date manipulation
-* [Passport.js](http://www.passportjs.org/) + [OAuth2 strategy](https://github.com/jaredhanson/passport-oauth2) - Authentication
-* [Sentry](https://sentry.io/) - Error event tracking
 * [dotenv](https://www.npmjs.com/package/dotenv) - Environment variables
 * [ejs](http://ejs.co/) - View template engine
 * [lodash](https://lodash.com/) - Utility library
+* [Mongoose](https://mongoosejs.com/) - MongoDB ORM
+* [Passport.js](http://www.passportjs.org/) + [OAuth2 strategy](https://github.com/jaredhanson/passport-oauth2) - Authentication
 * [request](https://github.com/request/request) - HTTP request client
-* [cookie-session](https://github.com/expressjs/cookie-session) - Cookie-based session middleware
+* [Sentry](https://sentry.io/) - Error event tracking
 
 ## Contributing
 
