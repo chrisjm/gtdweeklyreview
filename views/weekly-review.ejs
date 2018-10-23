@@ -27,9 +27,15 @@
         <tr>
           <td><%= event.extra_data.content %></td>
           <td>
+            <% if (project) { %>
             <strong style="color: <%= colors[project.color] %>">
               <%= project.name %>
             </strong>
+            <% } else { %>
+            <strong style="color: gray">
+              Archived Project
+            </strong>
+            <% } %>
           </td>
         </tr>
         <% }) %>
